@@ -10,4 +10,4 @@ module.exports = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
   },
-})
+});

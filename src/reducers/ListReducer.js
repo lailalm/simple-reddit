@@ -1,5 +1,12 @@
-const initialState = [];
+const initialState = [
+  'hehehehe',
+];
 
-export default function(state = 'hehehe', action) {
-  return state;
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case 'TEST':
+      return state;
+    default:
+      return state;
+  }
 }

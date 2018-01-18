@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 
 class Header extends Component {
@@ -8,7 +8,7 @@ class Header extends Component {
       <View style={styles.headerContainer}>
         <Text style={styles.header}>Simple Reddit</Text>
       </View>
-    )
+    );
   }
 }
 

@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import Header from 'components/Header/';
 
-class LandingPageScene extends Component {
+class LandingScene extends Component {
   render() {
     return (
       <View>
         <Header />
         <Text>Landing Page + {this.props.list}</Text>
       </View>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    list: state.listReducer
-  }
+    list: state.listReducer,
+  };
 }
 
-export default connect(mapStateToProps)(LandingPageScene);
+LandingScene.propTypes = {
+  list: PropTypes.array.isRequired,
+};
+
+export default connect(mapStateToProps)(LandingScene);
