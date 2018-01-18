@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import { View } from 'react-native';
 import { Text } from 'react-native-elements';
+
+import { generateTopic } from 'actions/DebugAction';
+
 import DebugButton from 'components/DebugButton/';
 import styles from './styles';
 
@@ -12,6 +18,7 @@ class DebugScene extends Component {
   }
 
   generatePost(num) {
+    this.props.generateTopic(num);
   }
 
   render() {
@@ -35,4 +42,8 @@ class DebugScene extends Component {
   }
 }
 
-export default DebugScene;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ generateTopic }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(DebugScene);
