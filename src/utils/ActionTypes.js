@@ -5,4 +5,4 @@ export const GET_LIST_TOPIC = 'GET_LIST_TOPIC';
 export const UPVOTE_TOPIC = 'UPVOTE_TOPIC';
 export const DOWNVOTE_TOPIC = 'DOWNVOTE_TOPIC';
 
-export const POST_TOPIC = 'POST_TOPIC';
+export const ADD_TOPIC = 'ADD_TOPIC';

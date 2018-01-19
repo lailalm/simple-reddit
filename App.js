@@ -19,9 +19,9 @@ export default class App extends React.Component {
         <RouterWithRedux>
           <Scene key="root" hideNavBar>
             <Scene key="lists" tabs type={ActionConst.REPLACE}>
-              <Scene key="home" title="Home" component={LandingScene} />
+              <Scene key="home" title="Home" component={LandingScene} initial />
               <Scene key="add-topic" title="Add Topic" component={CreateTopicScene} direction="vertical" hideTabBar={false} />
-              <Scene key="debug" title="Debug" component={DebugScene} initial />
+              <Scene key="debug" title="Debug" component={DebugScene} />
             </Scene>
           </Scene>
         </RouterWithRedux>

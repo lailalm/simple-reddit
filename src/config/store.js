@@ -5,7 +5,6 @@ import logger from 'redux-logger';
 import reducers from 'reducers/';
 
 export default function configureStore() {
-  console.log('haloooow', reducers);
   const enhancer = compose(applyMiddleware(thunk, logger));
   const store = createStore(reducers, enhancer);
 
