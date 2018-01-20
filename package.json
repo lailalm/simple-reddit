@@ -23,23 +23,26 @@
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json — ext .js src",
-    "watch:lint": "./node_modules/eslint-watch/bin/esw -w --fix"
+    "watch:lint": "node node_modules/eslint-watch/bin/esw -w --fix"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
     "babel-plugin-module-alias": "^1.6.0",
     "expo": "^23.0.4",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-native": "0.50.3",
-    "react-native-elements": "^0.19.0",
-    "react-native-router-flux": "^4.0.0-beta.28",
-    "react-redux": "^5.0.6",
+    "react-native-elements": "0.19.0",
+    "react-native-router-flux": "3.43.0",
+    "react-navigation": "1.0.0-beta.27",
+    "react-redux": "5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "3.0.6",
+    "redux-thunk": "2.2.0"
   }
 }

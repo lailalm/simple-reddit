@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
+import PropTypes from 'prop-types';
 
-import { upvoteTopic,
-  downvoteTopic } from 'actions/TopicAction';
+import {
+  upvoteTopic,
+  downvoteTopic,
+} from 'actions/TopicAction';
 
 import CardPost from 'components/CardPost/';
 
@@ -24,6 +26,10 @@ class LandingScene extends Component {
   downvoteTopic(id) {
     this.props.downvoteTopic(id);
   }
+
+  handleCreateTopicPress = () => {
+    this.props.navigation.navigate('CreateTopic');
+  };
 
   render() {
     const { list } = this.props;
@@ -68,6 +74,7 @@ LandingScene.propTypes = {
   list: PropTypes.object.isRequired,
   upvoteTopic: PropTypes.func.isRequired,
   downvoteTopic: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingScene);

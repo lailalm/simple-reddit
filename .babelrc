@@ -1,5 +1,8 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": [
+    "babel-preset-expo",
+    "jest"
+  ],
   "env": {
     "development": {
       "plugins": ["transform-react-jsx-source"]
@@ -7,10 +10,12 @@
   },
   "plugins": [[
     "module-alias", [
-      { "src": "./src/actions", "expose": "actions" },
-      { "src": "./src/components", "expose": "components" },
-      { "src": "./src/reducers", "expose": "reducers" },
-      { "src": "./src/utils", "expose": "utils" }
+      { "src": "./src/actions/", "expose": "actions" },
+      { "src": "./src/components/", "expose": "components" },
+      { "src": "./src/config/", "expose": "config" },
+      { "src": "./src/reducers/", "expose": "reducers" },
+      { "src": "./src/scenes/", "expose": "scenes" },
+      { "src": "./src/utils/", "expose": "utils" }
     ]
    ]]
 }
