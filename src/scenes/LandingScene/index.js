@@ -3,10 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import { Card, Icon } from 'react-native-elements';
 
 import { upvoteTopic,
   downvoteTopic } from 'actions/TopicAction';
+
+import CardPost from 'components/CardPost/';
 
 class LandingScene extends Component {
   constructor() {
@@ -25,25 +28,29 @@ class LandingScene extends Component {
 
   render() {
     const { list } = this.props;
+    const sorted_list = [...list.data];
+
+    // sort by upvotes descending, if the same sort by downvotes increasing
+    sorted_list.sort((a, b) => {
+      if (a.upvotes === b.upvotes) {
+        return a.downvotes - b.downvotes;
+      }
+      return b.upvotes - a.upvotes;
+    });
 
     return (
-      <View>
+      <ScrollView>
         {
-          list.data.map(item => (
-            <View key={item.id}>
-              <Text onPress={() => this.upvoteTopic(item.id)}>
-                upvote! {item.upvotes}
-              </Text>
-              <Text>
-                {item.title}
-              </Text>
-              <Text onPress={() => this.downvoteTopic(item.id)}>
-                downvotes! {item.downvotes}
-              </Text>
-            </View>
+          sorted_list.map(item => (
+            <CardPost
+              key={item.id}
+              item={item}
+              downvoteTopic={this.downvoteTopic}
+              upvoteTopic={this.upvoteTopic}
+            />
           ))
       }
-      </View>
+      </ScrollView>
     );
   }
 }
