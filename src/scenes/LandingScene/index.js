@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import PropTypes from 'prop-types';
 import { ScrollView } from 'react-native';
-import { Card, Icon } from 'react-native-elements';
 
 import { upvoteTopic,
   downvoteTopic } from 'actions/TopicAction';
@@ -28,10 +27,10 @@ class LandingScene extends Component {
 
   render() {
     const { list } = this.props;
-    const sorted_list = [...list.data];
+    const sortedList = [...list.data];
 
     // sort by upvotes descending, if the same sort by downvotes increasing
-    sorted_list.sort((a, b) => {
+    sortedList.sort((a, b) => {
       if (a.upvotes === b.upvotes) {
         return a.downvotes - b.downvotes;
       }
@@ -41,7 +40,7 @@ class LandingScene extends Component {
     return (
       <ScrollView>
         {
-          sorted_list.map(item => (
+          sortedList.map(item => (
             <CardPost
               key={item.id}
               item={item}

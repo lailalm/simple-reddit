@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import { Text } from 'react-native-elements';
 
 import { generateTopic } from 'actions/DebugAction';
+import PropTypes from 'prop-types';
 
 import DebugButton from 'components/DebugButton/';
 import styles from './styles';
@@ -45,5 +46,9 @@ class DebugScene extends Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ generateTopic }, dispatch);
 }
+
+DebugScene.propTypes = {
+  generateTopic: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(DebugScene);

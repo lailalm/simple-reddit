@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Card, Divider, Icon, Text } from 'react-native-elements';
+import { Card, Icon, Text } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-import styles from './styles';
 import {
   WARNING_COLOR,
   SUCCESS_COLOR,
 } from 'utils/Colors';
+
+import styles from './styles';
 
 class CardPost extends Component {
   constructor() {
