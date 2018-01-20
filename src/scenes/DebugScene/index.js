@@ -3,13 +3,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { View } from 'react-native';
-import { Text } from 'react-native-elements';
 
 import { generateTopic } from 'actions/DebugAction';
 import PropTypes from 'prop-types';
 
-import DebugButton from 'components/DebugButton/';
-import styles from './styles';
+import ButtonCustom from 'components/ButtonCustom/';
+
+import {
+  WARNING_COLOR,
+  SUCCESS_COLOR,
+} from 'utils/Colors';
 
 class DebugScene extends Component {
   constructor(props) {
@@ -25,17 +28,22 @@ class DebugScene extends Component {
   render() {
     return (
       <View>
-        <Text h5 style={styles.subTitle}>Debug the App here :D</Text>
-        <DebugButton
+        <ButtonCustom
           iconName="create"
-          color="green"
-          title="Generate 10 Posts"
+          color={SUCCESS_COLOR}
+          title="Add 10 Generated Topics"
           onPress={this.generatePost10}
         />
-        <DebugButton
+        <ButtonCustom
           iconName="create"
-          color="green"
-          title="Generate 20 Posts"
+          color={SUCCESS_COLOR}
+          title="Add 20 Generated Topics"
+          onPress={this.generatePost20}
+        />
+        <ButtonCustom
+          iconName="delete"
+          color={WARNING_COLOR}
+          title="Clear All Topic"
           onPress={this.generatePost20}
         />
       </View>

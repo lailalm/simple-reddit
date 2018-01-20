@@ -6,11 +6,16 @@ import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import {
+  PRIMARY_COLOR,
+} from 'utils/Colors';
+
+import {
   upvoteTopic,
   downvoteTopic,
 } from 'actions/TopicAction';
 
 import CardPost from 'components/CardPost/';
+import ButtonCustom from 'components/ButtonCustom/';
 
 class LandingScene extends Component {
   constructor() {
@@ -45,6 +50,12 @@ class LandingScene extends Component {
 
     return (
       <ScrollView>
+        <ButtonCustom
+          iconName="create"
+          color={PRIMARY_COLOR}
+          title="Create New Post"
+          onPress={this.handleCreateTopicPress}
+        />
         {
           sortedList.map(item => (
             <CardPost

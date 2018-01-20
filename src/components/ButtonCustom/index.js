@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-native-elements';
 
-class DebugButton extends Component {
+class ButtonCustom extends Component {
   render() {
     const {
       iconName, title, color, onPress,
@@ -24,11 +24,11 @@ class DebugButton extends Component {
   }
 }
 
-DebugButton.propTypes = {
+ButtonCustom.propTypes = {
   iconName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-export default DebugButton;
+export default ButtonCustom;

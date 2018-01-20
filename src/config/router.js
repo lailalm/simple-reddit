@@ -25,33 +25,42 @@ CodeTabBarIcon.propTypes = {
   tintColor: PropTypes.string.isRequired,
 };
 
-const Tabs = TabNavigator({
-  Landing: {
-    screen: LandingScene,
-    navigationOptions: {
-      title: 'Landing',
-      tabBarLabel: 'Landing',
-      tabBarIcon: ListTabBarIcon,
+const Tabs = TabNavigator(
+  {
+    Landing: {
+      screen: LandingScene,
+      navigationOptions: {
+        title: 'Landing',
+        tabBarLabel: 'Landing',
+        tabBarIcon: ListTabBarIcon,
+      },
+    },
+    Debug: {
+      screen: DebugScene,
+      navigationOptions: {
+        title: 'Debug',
+        tabBarLabel: 'Debug',
+        tabBarIcon: CodeTabBarIcon,
+      },
     },
   },
-  Debug: {
-    screen: DebugScene,
-    navigationOptions: {
-      title: 'Debug',
-      tabBarLabel: 'Debug',
-      tabBarIcon: CodeTabBarIcon,
-    },
+  {
+    animationEnabled: true,
   },
-});
+);
 
-const CreateTopic = StackNavigator({
-  CreateTopic: {
-    screen: CreateTopicScene,
-    navigationOptions: {
-      title: 'Post New Topic',
+const CreateTopic = StackNavigator(
+  {
+    CreateTopic: {
+      screen: CreateTopicScene,
+      navigationOptions: {
+      },
     },
   },
-});
+  {
+    headerMode: 'none',
+  },
+);
 
 const Root = StackNavigator(
   {
