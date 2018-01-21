@@ -1,4 +1,5 @@
 import {
+  CREATE_NEW_TOPIC,
   GENERATE_TOPIC,
   UPVOTE_TOPIC,
   DOWNVOTE_TOPIC,
@@ -56,6 +57,14 @@ export default (state = initialState, action) => {
           downvotes: item.downvotes + 1,
         };
       });
+      return {
+        ...state,
+        data,
+      };
+    case CREATE_NEW_TOPIC:
+      data = [
+        ...state.data, payload.new_post,
+      ];
       return {
         ...state,
         data,

@@ -53,7 +53,7 @@ export class LandingScene extends Component {
         <ButtonCustom
           iconName="create"
           color={PRIMARY_COLOR}
-          title="Create New Post"
+          title="Create New Topic"
           onPress={this.handleCreateTopicPress}
         />
         {
