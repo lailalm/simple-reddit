@@ -1,4 +1,5 @@
 import {
+  CREATE_NEW_TOPIC,
   UPVOTE_TOPIC,
   DOWNVOTE_TOPIC,
 } from 'utils/ActionTypes';
@@ -43,6 +44,27 @@ describe('>>> R E D U C E R --- Test TopicReducer', () => {
     expect(state.data).toContainEqual(expect.objectContaining({
       id: '1',
       downvotes: 4,
+    }));
+  });
+
+  it('+++ reducer for CREATE_NEW_TOPIC', () => {
+    let state = initialState;
+    state = listReducer(state, {
+      type: CREATE_NEW_TOPIC,
+      payload: {
+        new_post: {
+          id: 'new',
+          title: 'test title',
+          upvotes: 0,
+          downvotes: 0,
+        },
+      },
+    });
+    expect(state.data).toContainEqual(expect.objectContaining({
+      id: 'new',
+      title: 'test title',
+      upvotes: 0,
+      downvotes: 0,
     }));
   });
 });

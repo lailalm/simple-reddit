@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 import { View, TextInput, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import {
@@ -10,7 +11,7 @@ import {
 import styles from './styles';
 
 
-class CreateTopicScene extends Component {
+export class CreateTopicScene extends Component {
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
     return {
@@ -36,7 +37,15 @@ class CreateTopicScene extends Component {
   postNewTopic() {
     const topic = this.state.text;
     this.props.createNewTopic(topic);
-    this.props.navigation.navigate('Landing');
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      key: null,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Tabs', params: {} }),
+      ],
+    });
+
+    this.props.navigation.dispatch(resetAction);
   }
 
   render() {

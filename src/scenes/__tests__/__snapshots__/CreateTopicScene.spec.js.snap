@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>> CreateTopicScene --- Snapshot +++ capturing Snapshot of CreateTopicScene 1`] = `
+<View>
+  <TextInput
+    allowFontScaling={true}
+    multiline={true}
+    numberOfLines={10}
+    onChangeText={[Function]}
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "gray",
+        "borderWidth": 1,
+        "height": 300,
+        "margin": 10,
+        "padding": 10,
+      }
+    }
+    value=""
+  />
+</View>
+`;

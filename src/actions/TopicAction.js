@@ -31,7 +31,7 @@ const createNewTopic = topic => (
       new_post: {
         id: generetaId(),
         title: topic,
-        downvote: 0,
+        downvotes: 0,
         upvotes: 0,
       },
     },

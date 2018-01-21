@@ -3,7 +3,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
-import CreateTopicScene from 'scenes/CreateTopicScene';
+import ConnectedCreateTopicScene from 'scenes/CreateTopicScene';
 import DebugScene from 'scenes/DebugScene';
 import ConnectedLandingScene from 'scenes/LandingScene';
 
@@ -50,9 +50,7 @@ const Tabs = TabNavigator(
 const CreateTopic = StackNavigator(
   {
     CreateTopic: {
-      screen: CreateTopicScene,
-      navigationOptions: {
-      },
+      screen: ConnectedCreateTopicScene,
     },
   },
   {

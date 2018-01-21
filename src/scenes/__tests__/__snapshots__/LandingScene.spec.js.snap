@@ -141,11 +141,28 @@ exports[`>>> LandingScene --- Snapshot +++ capturing Snapshot of LandingScene 1`
               ]
             }
           >
-            Create New Post
+            Create New Topic
           </Text>
         </View>
       </View>
     </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "padding": 20,
+          "paddingBottom": 0,
+        }
+      }
+    >
+      Show page 
+      1
+       from 
+      1
+       pages
+    </Text>
     <View
       style={
         Array [

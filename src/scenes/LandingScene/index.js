@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import {
@@ -24,6 +24,13 @@ export class LandingScene extends Component {
     this.downvoteTopic = this.downvoteTopic.bind(this);
   }
 
+  componentWillMount() {
+    this.setState({
+      page: 1,
+      limit: 20,
+    });
+  }
+
   upvoteTopic(id) {
     this.props.upvoteTopic(id);
   }
@@ -37,6 +44,7 @@ export class LandingScene extends Component {
   };
 
   render() {
+    const { page, limit } = this.state;
     const { list } = this.props;
     const sortedList = [...list.data];
 
@@ -48,6 +56,11 @@ export class LandingScene extends Component {
       return b.upvotes - a.upvotes;
     });
 
+    const start = (page - 1) * limit;
+    const end = page * limit;
+    const totalPage = Math.ceil(sortedList.length / limit);
+    const visibleList = sortedList.slice(start, end);
+
     return (
       <ScrollView>
         <ButtonCustom
@@ -56,8 +69,11 @@ export class LandingScene extends Component {
           title="Create New Topic"
           onPress={this.handleCreateTopicPress}
         />
+        <Text style={{ padding: 20, paddingBottom: 0 }}>
+          Show page {page} from {totalPage} pages
+        </Text>
         {
-          sortedList.map(item => (
+          visibleList.map(item => (
             <CardPost
               key={item.id}
               item={item}
