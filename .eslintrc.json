@@ -8,9 +8,11 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-        "react/prefer-stateless-function": "off",
+        "react/forbid-prop-types": "off",
+        "react/import/no-named-as-default": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/forbid-prop-types": "off"
+        "react/prefer-stateless-function": "off",
+        "react/require-default-props": [0, { "forbidDefaultForRequired": false }]
     },
     "settings": {
         "import/resolver": {

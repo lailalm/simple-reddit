@@ -14,10 +14,10 @@ import {
   downvoteTopic,
 } from 'actions/TopicAction';
 
-import CardPost from 'components/CardPost/';
-import ButtonCustom from 'components/ButtonCustom/';
+import CardPost from 'components/CardPost';
+import ButtonCustom from 'components/ButtonCustom';
 
-class LandingScene extends Component {
+export class LandingScene extends Component {
   constructor() {
     super();
     this.upvoteTopic = this.upvoteTopic.bind(this);
@@ -82,10 +82,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 LandingScene.propTypes = {
-  list: PropTypes.object.isRequired,
-  upvoteTopic: PropTypes.func.isRequired,
-  downvoteTopic: PropTypes.func.isRequired,
-  navigation: PropTypes.object.isRequired,
+  list: PropTypes.object,
+  upvoteTopic: PropTypes.func,
+  downvoteTopic: PropTypes.func,
+  navigation: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingScene);
