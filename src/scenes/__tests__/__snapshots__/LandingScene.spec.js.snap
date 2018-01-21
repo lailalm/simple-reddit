@@ -157,11 +157,11 @@ exports[`>>> LandingScene --- Snapshot +++ capturing Snapshot of LandingScene 1`
         }
       }
     >
-      Show page 
+      Show top 
       1
-       from 
+       topics from 
       1
-       pages
+       topics
     </Text>
     <View
       style={
