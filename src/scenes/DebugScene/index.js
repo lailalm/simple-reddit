@@ -16,7 +16,7 @@ import {
   SUCCESS_COLOR,
 } from 'utils/Colors';
 
-class DebugScene extends Component {
+export class DebugScene extends Component {
   constructor(props) {
     super(props);
     this.generateTopic10 = this.generateTopic.bind(this, 10);

@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 import ConnectedCreateTopicScene from 'scenes/CreateTopicScene';
-import DebugScene from 'scenes/DebugScene';
+import ConnectedDebugScene from 'scenes/DebugScene';
 import ConnectedLandingScene from 'scenes/LandingScene';
 
 const ListTabBarIcon = ({ tintColor }) => (
@@ -34,7 +34,7 @@ const Tabs = TabNavigator(
       },
     },
     Debug: {
-      screen: DebugScene,
+      screen: ConnectedDebugScene,
       navigationOptions: {
         title: 'Debug',
         tabBarLabel: 'Debug',
