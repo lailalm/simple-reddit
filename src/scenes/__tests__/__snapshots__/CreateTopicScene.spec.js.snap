@@ -4,6 +4,7 @@ exports[`>>> CreateTopicScene --- Snapshot +++ capturing Snapshot of CreateTopic
 <View>
   <TextInput
     allowFontScaling={true}
+    maxLength={255}
     multiline={true}
     numberOfLines={10}
     onChangeText={[Function]}

@@ -8,7 +8,6 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error"] }],
     "react/forbid-prop-types": "off",
     "react/import/no-named-as-default": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

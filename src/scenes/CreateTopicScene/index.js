@@ -37,6 +37,7 @@ export class CreateTopicScene extends Component {
   postNewTopic() {
     const topic = this.state.text;
     this.props.createNewTopic(topic);
+    // basically this reset the stack in the router and go to Landing Tab
     const resetAction = NavigationActions.reset({
       index: 0,
       key: null,
@@ -54,6 +55,7 @@ export class CreateTopicScene extends Component {
         <TextInput
           multiline
           style={styles.textArea}
+          maxLength={255}
           numberOfLines={10}
           onChangeText={text => this.setState({ text })}
           value={this.state.text}

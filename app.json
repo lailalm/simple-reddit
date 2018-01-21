@@ -1,5 +1,10 @@
 {
   "expo": {
+    "name": "Simple Reddit",
+    "slug": "simple-reddit",
+    "sdkVersion": "24.0.0",
+    "privacy": "public",
+    "githubUrl": "https://github.com/lailalm/simple-reddit",
     "sdkVersion": "23.0.0"
   }
 }
