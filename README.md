@@ -1,4 +1,9 @@
+# Simple Reddit with React Native
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+
+![Alt Text](https://media.giphy.com/media/26gN2oGjNXxn8QVXi/giphy.gif)
+![Alt Text](https://media.giphy.com/media/3oFzmaZck0fRexItMY/giphy.gif)
 
 This is one of the example to build an offline Reddit-Like with limited functionality. This project only covers the frontend side, without any connection to backend.
 
@@ -19,7 +24,7 @@ First thing after downloading/forking this repo you have to is do:
 
 then
 
-`npm install`
+`npm install` or `yarn install`
 
 
 ## Table of Contents
