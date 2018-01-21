@@ -2,7 +2,13 @@ import {
   CREATE_NEW_TOPIC,
   UPVOTE_TOPIC,
   DOWNVOTE_TOPIC,
+  CLEAR_TOPIC,
+  GENERATE_TOPIC,
 } from 'utils/ActionTypes';
+
+import {
+  getGeneratedTopic,
+} from 'utils/Generator';
 
 import listReducer from 'reducers/ListReducer';
 
@@ -66,5 +72,25 @@ describe('>>> R E D U C E R --- Test TopicReducer', () => {
       upvotes: 0,
       downvotes: 0,
     }));
+  });
+
+  it('+++ reducer for GENERATE_TOPIC', () => {
+    const initialLength = initialState.data.length;
+    let state = initialState;
+    state = listReducer(state, {
+      type: GENERATE_TOPIC,
+      payload: {
+        list: getGeneratedTopic(5),
+      },
+    });
+    expect(state.data.length).toEqual(initialLength + 5);
+  });
+
+  it('+++ reducer for CLEAR_TOPIC', () => {
+    let state = initialState;
+    state = listReducer(state, {
+      type: CLEAR_TOPIC,
+    });
+    expect(state.data).toEqual([]);
   });
 });
