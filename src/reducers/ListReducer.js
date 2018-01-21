@@ -1,4 +1,5 @@
 import {
+  CLEAR_TOPIC,
   CREATE_NEW_TOPIC,
   GENERATE_TOPIC,
   UPVOTE_TOPIC,
@@ -70,12 +71,19 @@ export default (state = initialState, action) => {
         data,
       };
     case GENERATE_TOPIC:
+      data = [
+        ...state.data,
+        ...payload.list,
+      ];
       return {
         ...state,
-        data: {
-          ...state.data,
-          payload,
-        },
+        data,
+      };
+    case CLEAR_TOPIC:
+      data = [];
+      return {
+        ...state,
+        data,
       };
     default:
       return state;

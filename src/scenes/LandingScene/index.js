@@ -58,7 +58,7 @@ export class LandingScene extends Component {
 
     const start = (page - 1) * limit;
     const end = page * limit;
-    const totalPage = Math.ceil(sortedList.length / limit);
+    const totalTopics = sortedList.length;
     const visibleList = sortedList.slice(start, end);
 
     return (
@@ -70,7 +70,7 @@ export class LandingScene extends Component {
           onPress={this.handleCreateTopicPress}
         />
         <Text style={{ padding: 20, paddingBottom: 0 }}>
-          Show page {page} from {totalPage} pages
+          Show top {limit < totalTopics ? limit : totalTopics } topics from {totalTopics} topics
         </Text>
         {
           visibleList.map(item => (

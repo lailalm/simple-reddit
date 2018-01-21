@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { View } from 'react-native';
 
-import { generateTopic } from 'actions/DebugAction';
+import {
+  generateTopic,
+  clearTopic,
+} from 'actions/DebugAction';
 import PropTypes from 'prop-types';
 
 import ButtonCustom from 'components/ButtonCustom/';
@@ -17,12 +19,17 @@ import {
 class DebugScene extends Component {
   constructor(props) {
     super(props);
-    this.generatePost10 = this.generatePost.bind(this, 10);
-    this.generatePost20 = this.generatePost.bind(this, 20);
+    this.generateTopic10 = this.generateTopic.bind(this, 10);
+    this.generateTopic20 = this.generateTopic.bind(this, 20);
+    this.clearTopic = this.clearTopic.bind(this);
   }
 
-  generatePost(num) {
-    this.props.generateTopic(num);
+  generateTopic(number) {
+    this.props.generateTopic(number);
+  }
+
+  clearTopic() {
+    this.props.clearTopic();
   }
 
   render() {
@@ -32,19 +39,19 @@ class DebugScene extends Component {
           iconName="create"
           color={SUCCESS_COLOR}
           title="Add 10 Generated Topics"
-          onPress={this.generatePost10}
+          onPress={this.generateTopic10}
         />
         <ButtonCustom
           iconName="create"
           color={SUCCESS_COLOR}
           title="Add 20 Generated Topics"
-          onPress={this.generatePost20}
+          onPress={this.generateTopic20}
         />
         <ButtonCustom
           iconName="delete"
           color={WARNING_COLOR}
           title="Clear All Topic"
-          onPress={this.generatePost20}
+          onPress={this.clearTopic}
         />
       </View>
     );
@@ -52,11 +59,12 @@ class DebugScene extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ generateTopic }, dispatch);
+  return bindActionCreators({ generateTopic, clearTopic }, dispatch);
 }
 
 DebugScene.propTypes = {
-  generateTopic: PropTypes.func.isRequired,
+  generateTopic: PropTypes.func,
+  clearTopic: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(DebugScene);
