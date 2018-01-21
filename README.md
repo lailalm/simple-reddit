@@ -65,11 +65,11 @@ Open it in the [Expo app](https://expo.io) on your phone to view it. It will rel
 
 Runs the [jest](https://github.com/facebook/jest) test runner on your tests.
 
-#### `yarn run ios`
+#### `yarn run ios` / `yarn start` then press `i`
 
 Like `yarn start`, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
 
-#### `yarn run android`
+#### `yarn run android`  / `yarn start` then press `a`
 
 Like `yarn start`, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for detailed setup).
 
@@ -122,7 +122,7 @@ Basically kind of the same with `yarn lint` but with additional watch and auto f
 - The `src` folder contains the main source code. Inside of it:
   - `actions` folder consists of actions in redux, with the tests in each of them in folder `__test__`.
   - `components` folder consists of small components like button or topic wrapper (card post) that usually be used in other components/scenes.
-  - `config` folder consists of router and the store. 
+  - `config` folder consists of router and the store.
   - `reducers` folder consists of reducers (this time only one) in redux, with the tests in each of them in folder `__test__`
   - `scenes` folder consists of scenes component (maybe it's like pages in website), with the tests in each of them in folder `__test__`
   - `utils` folder consists of constants (action types and colors) and function helper (generator).
