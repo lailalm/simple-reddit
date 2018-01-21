@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { shallow, mount } from 'enzyme';
+
 import ConnectedLandingScene, { LandingScene } from 'scenes/LandingScene';
 
 import {
@@ -27,6 +28,14 @@ const dummyOneData = {
   }],
   sortOptions: 'DECREASING_UPVOTE',
 };
+
+// Snapshot for LandingScene React Component
+describe('>>> LandingScene --- Snapshot', () => {
+  it('+++ capturing Snapshot of LandingScene', () => {
+    const renderedValue = renderer.create(<LandingScene list={dummyOneData} />).toJSON();
+    expect(renderedValue).toMatchSnapshot();
+  });
+});
 
 describe('>>> LandingScene --- Shallow Render', () => {
   let wrapper;
@@ -101,7 +110,7 @@ describe('>>> LandingScene --- React-Redux (Mount + wrapping in <Provider>)', ()
   });
 });
 
-describe('>>> LandingScene --- React-Redux (actual Store + reducers) more of Integration Testing', () => {
+describe('>>> LandingScene --- React-Redux (actual Store + reducers)', () => {
   const origConsole = console.error;
   let store;
   let wrapper;

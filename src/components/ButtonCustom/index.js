@@ -25,10 +25,10 @@ class ButtonCustom extends Component {
 }
 
 ButtonCustom.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+  iconName: PropTypes.string,
+  title: PropTypes.string,
+  color: PropTypes.string,
+  onPress: PropTypes.func,
 };
 
 export default ButtonCustom;
