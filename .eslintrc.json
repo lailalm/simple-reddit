@@ -1,22 +1,23 @@
 {
-    "env": {
-        "node": true,
-        "browser": true,
-        "es6": true,
-        "jest": true
-    },
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "rules": {
-        "react/forbid-prop-types": "off",
-        "react/import/no-named-as-default": 0,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/prefer-stateless-function": "off",
-        "react/require-default-props": [0, { "forbidDefaultForRequired": false }]
-    },
-    "settings": {
-        "import/resolver": {
-            "babel-module-alias": {}
-        }
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/forbid-prop-types": "off",
+    "react/import/no-named-as-default": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": "off",
+    "react/require-default-props": [0, { "forbidDefaultForRequired": false }]
+  },
+  "settings": {
+    "import/resolver": {
+        "babel-module-alias": {}
     }
+  }
 }

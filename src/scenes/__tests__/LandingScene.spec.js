@@ -101,10 +101,9 @@ describe('>>> LandingScene --- React-Redux (Mount + wrapping in <Provider>)', ()
   });
 
   it('+++ check action on dispatching ', () => {
-    let action;
     store.dispatch(upvoteTopic(1));
     store.dispatch(downvoteTopic(1));
-    action = store.getActions();
+    const action = store.getActions();
     expect(action[0].type).toBe(UPVOTE_TOPIC);
     expect(action[1].type).toBe(DOWNVOTE_TOPIC);
   });
