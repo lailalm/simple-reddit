@@ -17,7 +17,7 @@ You can run this project through:
 
 Or you can simply follow [these steps](https://docs.expo.io/versions/latest/guides/building-standalone-apps.html) to build the .apk or .ipa (but you need to configure some).
 
-First thing after downloading/forking this repo you have to is do:
+First thing after downloading/forking this repo you have to:
 
 
 `cd simple-reddit`
@@ -45,6 +45,7 @@ then
 * [My Written Code](#written-code)
 * [Project Structure](#project-structure)
 * [Contact](#contact)
+* [Additional Notes](#additional-notes)
 
 ## Requirements
 You better have installed:
@@ -107,13 +108,13 @@ Basically kind of the same with `yarn lint` but with additional watch and auto f
 ## Functionality
 #### Basic
 - [x] Maintain a list of topics and its upvotes/downvotes
-- [x] Allow the user to submit topics. With limited string that does not exceed 255 characters.
-- [x] Always show a list of top 20 topics (sorted by upvotes, descending and if the same by downvotes, increasing)
-- [x] In-memory data structure using redux.
-- [x] Test
+- [x] Allow the user to submit topics. With limited string that does not exceed 255 characters
+- [x] Always show a list of top 20 topics (sorted by upvotes, descending. If the upvotes have same value, it will be sorted by downvotes, increasing)
+- [x] In-memory data structure using redux
+- [x] Testing
 
 #### Additional
-- [x] Generate 10 or 20 new topics
+- [x] Generate/Add 10 or 20 new generated random topics
 - [x] Clear all the topics
 
 
@@ -134,3 +135,6 @@ Basically kind of the same with `yarn lint` but with additional watch and auto f
 
 ## Contact
 Should you have any problem with running/building/installing this, do not hesitate to contact me through this github or `laila.mauhibah@gmail.com`
+
+## Additional Notes
+If you see the commit in this project, those are created by me (Laila Mauhibah) but with different name. Sometimes I did it in the office/home so sometimes I used my office laptop/my own laptop which made the committers name different (laila/lailalm/Mauhibah Laila). But basically those are from the same github account which belongs to me (Laila Mauhibah) :)
