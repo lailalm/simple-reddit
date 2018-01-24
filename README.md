@@ -119,7 +119,7 @@ Basically kind of the same with `yarn lint` but with additional watch and auto f
 
 
 ## My Written Code
-- Basically I wrote all the codes in the `src` and `__test__` folder.
+- Basically I wrote all the codes in the `src` and `__test__` folder. Except the `generateId function` in folder `src/utils/Generator.js`, because I found the function from one of the answer in  `https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript` which I think is very good implementation, so I used it.
 - I also wrote/added the `.babelrc`, `eslintrc.json`, `setupTest.js`, `package.json`, and `App.js`
 
 ## Project Structure
