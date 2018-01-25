@@ -1,4 +1,4 @@
-# Simple Reddit with React Native
+# Up/Down with React Native
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
@@ -40,12 +40,7 @@ then
   * [yarn lint](#lint)
   * [yarn watch:lint](#watch-lint)
 * [Functionality](#functionality)
-  * [Basic](#basic-functionality)
-  * [Additional](#additional-functionality)
-* [My Written Code](#written-code)
-* [Project Structure](#project-structure)
 * [Contact](#contact)
-* [Additional Notes](#additional-notes)
 
 ## Requirements
 You better have installed:
@@ -106,35 +101,12 @@ Runs and check the linter of your code.
 Basically kind of the same with `yarn lint` but with additional watch and auto fix.
 
 ## Functionality
-#### Basic
 - [x] Maintain a list of topics and its upvotes/downvotes
 - [x] Allow the user to submit topics. With limited string that does not exceed 255 characters
 - [x] Always show a list of top 20 topics (sorted by upvotes, descending. If the upvotes have same value, it will be sorted by downvotes, increasing)
-- [x] In-memory data structure using redux
-- [x] Testing
-
-#### Additional
 - [x] Generate/Add 10 or 20 new generated random topics
 - [x] Clear all the topics
 
 
-## My Written Code
-- Basically I wrote all the codes in the `src` and `__test__` folder. Except the `generateId function` in folder `src/utils/Generator.js`, because I found the function from one of the answer in  `https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript` which I think is very good implementation, so I used it.
-- I also wrote/added the `.babelrc`, `eslintrc.json`, `setupTest.js`, `package.json`, and `App.js`
-
-## Project Structure
-- The main file is `App.js` with the test on folder `__test__`.
-- The `assets` folder is used only for app icon.
-- The `src` folder contains the main source code. Inside of it:
-  - `actions` folder consists of actions in redux, with the tests in each of them in folder `__test__`.
-  - `components` folder consists of small components like button or topic wrapper (card post) that usually be used in other components/scenes.
-  - `config` folder consists of router and the store.
-  - `reducers` folder consists of reducers (this time only one) in redux, with the tests in each of them in folder `__test__`
-  - `scenes` folder consists of scenes component (maybe it's like pages in website), with the tests in each of them in folder `__test__`
-  - `utils` folder consists of constants (action types and colors) and function helper (generator).
-
 ## Contact
 Should you have any problem with running/building/installing this, do not hesitate to contact me through this github or `laila.mauhibah@gmail.com`
-
-## Additional Notes
-If you see the commit in this project, those are created by me (Laila Mauhibah) but with different name. Sometimes I did it in the office/home so sometimes I used my office laptop/my own laptop which made the committers name different (laila/lailalm/Mauhibah Laila). But basically those are from the same github account which belongs to me (Laila Mauhibah) :)
